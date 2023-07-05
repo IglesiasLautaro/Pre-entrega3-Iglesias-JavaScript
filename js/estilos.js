@@ -1,0 +1,177 @@
+// Objetivos de la tercer pre-entrega:
+// -Usar DOM
+// -Usar Storage
+// -Usar eventos
+
+class DataBase{
+    constructor(){
+        this.productos = [],
+        this.agregarProductos("Heladera Bottom Mount Inox Whirlpool 588 Lts - WRE85AK", 966000, "Refrigeracion", 1, "heladera1.webp");
+        this.agregarProductos("Heladera Bottom Mount Inox Whirlpool Blanca 588 Lts - WRE85AK", 900000, "Refrigeracion", 2, "heladera2.webp");
+        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter 500 Lts", 812000, "Refrigeracion", 3, "heladera3.webp");
+        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter de 462 Lts", 778000, "Refrigeracion", 4, "heladera4.webp");
+        this.agregarProductos("Heladera Whirlpool French Door Bottom Mount 554 Lts", 1107299, "Refrigeracion", 5, "heladera5.webp");
+        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter 443 Lts", 826599, "Refrigeracion", 6, "heladera6.webp");
+        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter de 462 Lts WRM56D2", 736699, "Refrigeracion", 7, "heladera7.webp");
+        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter 443 Lts WRE57D2", 785199, "Refrigeracion", 8, "heladera8.webp");
+        this.agregarProductos("Heladera Whirlpool No Frost Complete 573 Lts WRE80D2", "Sin stock", "Refrigeracion", 9, "heladera9.webp");
+        this.agregarProductos("Heladera Whirlpool No Frost 573 Lts WRE80K2", "Sin stock", "Refrigeracion", 10, "heladera10.png");
+        this.agregarProductos("Heladera Whirlpool No Frost 374 Lts Blanca WRM44HB", "Sin stock", "Refrigeracion", 11, "heladera11.webp");
+        this.agregarProductos("Heladera Whirlpool No frost French Door 541Lts WRO80K2", "Sin stock", "Refrigeracion", 12, "heladera12.webp");
+       
+       
+    }
+
+    // METODO PARA AGREGAR REGISTROS A NUESTRA BASE DE DATOS
+    agregarProductos(nombre, precio, categoria, id, imagen){
+        const producto = new Producto(nombre, precio, categoria, id, imagen);
+        this.productos.push(producto);
+    }
+    // METODO PARA PEDIR LA LISTA DE PRODUCTOS 
+    traerProductos(){
+        return this.productos;
+    }
+
+    productoPorId(id){
+        return this.productos.find((producto) => producto.id === id);
+    }
+}
+
+
+
+
+
+
+class Carrito{
+    constructor(){
+    this.carrito = [];
+    this.total = 0;
+    this.totalProductos = 0;
+    }
+
+    estaEnCarrito({ id }){
+        return this.carrito.find((producto) => producto.id === id);
+    }
+    agregarProductoCarrito(producto){
+        let productoEnCarrito = this.estaEnCarrito(producto);
+        if(productoEnCarrito){
+            // Esto es para sumar mas cantidad de productos
+            productoEnCarrito.cantidad++;
+        } else {
+            // Agregar al carrito
+            this.carrito.push({...producto, cantidad: 1});
+        }
+        this.listar();
+    }
+
+    quitarProducto(id){
+        const indice = this.carrito.findIndex((producto) => producto.id === id);
+        if (this.carrito[indice].cantidad > 1){
+            this.carrito[indice].cantidad--;
+        } else {
+            // Sino que me lo borre del carrito
+            this.carrito.splice(indice, 1);
+        }
+
+        this.listar();
+    }
+
+    listar(){
+        this.total = 0;
+        this.totalProductos = 0;
+        productosCarrito.innerHTML = "";
+        for (const producto of this.carrito){
+            productosCarrito.innerHTML += `
+            <div class="producto">
+            <h4>${producto.nombre}</h4>
+            <p>$ ${producto.precio}</p>
+            <a href="#" data-id="${producto.id}" class="btnQuitar">Quitar del carrito</a><br><br>
+            --------------------------------------------------
+            </div>
+            `
+            this.total += (producto.precio * producto.cantidad);
+            this.totalProductos += producto.cantidad;
+        }
+        // BOTONES DE QUITAR
+        const botonesQuitar = document.querySelectorAll(".btnQuitar");
+        for (const boton of botonesQuitar){
+            boton.onclick = (event) => {
+                event.preventDefault();
+                this.quitarProducto(Number(boton.dataset.id));
+            }
+        }
+        // Actualizamos las variables del carrito
+        spanCantidadProductos.innerText = this.totalProductos;
+        spanTotalCarrito.innerText = this.total;
+    }
+}
+
+
+
+// CLASE MOLDE PARA LOS PRODUCTOS
+class Producto{
+    constructor(nombre, precio, categoria, id, imagen = false, ){
+        this.nombre = nombre,
+        this.precio = precio,
+        this.categoria = categoria,
+        this.id = id,
+        this.imagen = imagen
+    }
+}
+// INSTANCIAMOS LA BASE DE DATOS
+const db = new DataBase();
+
+// Vinculamos a traves de DOM los elementos de nuestro HTML con JS
+const productosDataBase =  document.querySelector("#productos");
+const productosCarrito = document.querySelector("#carrito");
+const spanCantidadProductos = document.querySelector("#cantidadProductos");
+const spanTotalCarrito = document.querySelector("#totalCarrito");
+
+// Llamamos a la funcion cargarProductos
+cargarProductos();
+
+// Registros de nuestra base de datos en el HTML
+function cargarProductos(){
+    const productos = db.traerProductos();
+    productosDataBase.innerHTML = "";
+    for (const producto of productos){
+        productosDataBase.innerHTML += `
+        <div class="producto">
+        <img src="../img/${producto.imagen}" width="150px">
+        <h4>${producto.nombre}</h4>
+        <p>$ ${producto.precio}</p>
+        <p><a href="#" class="btnAgregar" data-id="${producto.id}">Agregar al carrito</a></p>
+        </div>
+        `;
+    }
+}
+
+// Botones de agregar al carrito
+const botonesAgregar = document.querySelectorAll(".btnAgregar");
+for (const boton of botonesAgregar){
+    boton.addEventListener("click", (event) => {
+        event.preventDefault();
+        const id = Number(boton.dataset.id);
+        const producto = db.productoPorId(id);
+        carrito.agregarProductoCarrito(producto);
+    })
+}
+
+
+
+
+
+// INSTANCIAMOS EL CARRITO
+const carrito = new Carrito();
+
+
+
+function openNav() {
+    document.getElementById("sideNavigation").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+function closeNav() {
+    document.getElementById("sideNavigation").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+

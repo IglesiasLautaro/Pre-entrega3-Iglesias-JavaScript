@@ -1,0 +1,471 @@
+/* Cambios generales */
+
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+
+body{
+    background-color: lightcoral
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+
+/* Clases para aplicar a distintos elemenos del HTML */
+
+.img-fluid{
+    width: 100%; 
+    height: auto;
+}
+.border-radius{
+    border-radius: 20px;
+}
+.color-black{
+    color: black;
+}
+
+/* Grillas para ordenar los elementos de mi HTML */
+
+.indexGrid{
+    display: grid;
+    grid-template-areas: 
+    "nombrePagina barraDeBusqueda carrito-pagina";
+    grid-template-columns: 33% 33% 33%;
+    
+
+    background-color:red;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+.carrito-pagina{
+    grid-area: carrito-pagina; 
+    padding-left: 200px;
+}
+.carrito-pagina a{
+    color: black; 
+    font-size: 20px;
+}
+.nombrePagina{
+    grid-area: nombrePagina; 
+    font-size: 30px;
+    text-align: center; 
+    padding-left: 400px;
+}
+.nombrePagina p:hover{
+    color: white; 
+    transition: 2s all;
+}
+.barraDeBusqueda{
+    grid-area: barraDeBusqueda;
+} 
+input{
+    height: 40px; 
+    width: 600px; 
+    border-radius: 20px; 
+    border: 3px solid black;
+}
+
+.gridMainIndex{
+    display: grid;
+    grid-template-areas:
+    "cartaConProducto1 cartaConProducto2 cartaConProducto3"
+    "cartaConProducto4 cartaConProducto5 cartaConProducto6";
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto auto auto;
+}
+
+
+.cartaConProducto2{
+      grid-area: cartaConProducto2;
+      margin: 50px;
+      background-color: white; 
+      padding: 90px; 
+      text-align: center; 
+      border-radius: 20px; 
+      box-shadow: 5px 5px 2px; 
+}
+.cartaConProducto3{
+      grid-area: cartaConProducto3;
+      margin: 50px;
+      background-color: white; 
+      padding: 90px; 
+      text-align: center; 
+      border-radius: 20px; 
+      box-shadow: 5px 5px 2px; 
+}
+.cartaConProducto4{
+      grid-area: cartaConProducto4;
+      margin: 50px;
+      background-color: white; 
+      padding: 90px; 
+      text-align: center; 
+      border-radius: 20px; 
+      box-shadow: 5px 5px 2px; 
+}
+.cartaConProducto5{
+      grid-area: cartaConProducto5;
+      margin: 50px;
+      background-color: white; 
+      padding: 90px; 
+      text-align: center; 
+      border-radius: 20px; 
+      box-shadow: 5px 5px 2px; 
+}
+.cartaConProducto6{
+      grid-area: cartaConProducto6;
+      margin: 50px;
+      background-color: white; 
+      padding: 90px; 
+      text-align: center; 
+      border-radius: 20px; 
+      box-shadow: 5px 5px 2px; 
+}
+.cartaConProducto1{
+      grid-area: cartaConProducto1;
+      margin: 50px;
+      background-color: white; 
+      padding: 90px; 
+      text-align: center; 
+      border-radius: 20px; 
+      box-shadow: 5px 5px 2px; 
+}
+
+.cartaConProducto1 h1{
+    padding-bottom: 50px; 
+    text-decoration: underline;
+}
+.cartaConProducto2 h1{
+    padding-bottom: 50px; 
+    text-decoration: underline;
+}
+.cartaConProducto3 h1{
+    padding-bottom: 50px; 
+    text-decoration: underline;
+}
+.cartaConProducto4 h1{
+    padding-bottom: 50px; 
+    text-decoration: underline;
+}
+.cartaConProducto5 h1{
+    padding-bottom: 50px; 
+    text-decoration: underline;
+}
+.cartaConProducto6 h1{
+    padding-bottom: 50px; 
+    text-decoration: underline;
+}
+
+.cartaConProducto1 p{
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+.cartaConProducto2 p{
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+.cartaConProducto3 p{
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+.cartaConProducto4 p{
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+.cartaConProducto5 p{
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+.cartaConProducto6 p{
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+
+
+
+
+.cartaConProducto1 a{ 
+    background-color: white; 
+    color: black; 
+    padding: 10px; 
+    border-radius: 10px;
+}
+.cartaConProducto2 a{ 
+    background-color: white; 
+    color: black; 
+    padding: 10px; 
+    border-radius: 10px;
+}
+.cartaConProducto3 a{ 
+    background-color: white; 
+    color: black; 
+    padding: 10px; 
+    border-radius: 10px;
+}
+.cartaConProducto4 a{ 
+    background-color: white; 
+    color: black; 
+    padding: 10px; 
+    border-radius: 10px;
+}
+.cartaConProducto5 a{ 
+    background-color: white; 
+    color: black; 
+    padding: 10px; 
+    border-radius: 10px;
+}
+.cartaConProducto6 a{ 
+    background-color: white; 
+    color: black; 
+    padding: 10px; 
+    border-radius: 10px;
+}
+
+.cartaConProducto1 a:hover{
+    background-color: black; 
+    color: white; 
+    transition: 1s all;
+}
+.cartaConProducto2 a:hover{
+    background-color: black; 
+    color: white; 
+    transition: 1s all;
+}
+.cartaConProducto3 a:hover{
+    background-color: black; 
+    color: white; 
+    transition: 1s all;
+}
+.cartaConProducto4 a:hover{
+    background-color: black; 
+    color: white; 
+    transition: 1s all;
+}
+.cartaConProducto5 a:hover{
+    background-color: black; 
+    color: white; 
+    transition: 1s all;
+}
+.cartaConProducto6 a:hover{
+    background-color: black; 
+    color: white; 
+    transition: 1s all;
+}
+
+footer{background-color: red;}
+
+.footerGrid{
+    display: grid;
+    grid-template-areas:
+    "nombreDePagina redes-sociales";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto;
+
+    align-items: center;
+}
+
+.nombreDePagina{
+    grid-area: nombreDePagina; 
+    font-size: 30px; 
+    padding-left: 150px;
+}
+
+.redes-sociales{
+    grid-area: redes-sociales; 
+    display: flex; 
+    align-items: center; 
+    padding: 40px;
+}
+.redes-sociales h4{
+    font-size: 25px; 
+}
+.redes-sociales ul{
+    display: flex;
+}
+.redes-sociales ul li{
+    padding: 5px; 
+    font-size: 20px;
+}
+.redes-sociales ul li a{
+    color: black; 
+    padding-left: 10px; 
+    padding-right: 10px;
+}
+.redes-sociales ul li a:hover{
+    color: white; 
+    transition: 1s all;
+}
+
+
+section h3{
+    padding-top: 50px;
+}
+#productos{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+}
+
+#productos h4{
+    padding: 50px 60px 50px 60px;
+}
+#productos p{
+    padding-bottom: 50px;
+}
+#productos a{
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: red;
+    border: 2px solid;
+    border-color: red;
+    position: relative;
+    border-radius: 30px;
+}
+
+#productos a:hover{
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgb(172, 49, 49);
+     transition: all 0.2s ease;
+}
+#productos .producto{
+    background-color: white; 
+    margin: 50px 80px 80px 60px; 
+    grid-area: auto; 
+    padding: 50px 10px 100px 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+
+.btnAgregar{
+    color: black; 
+    font-size: 20px;
+}
+.btnAgregar:hover{
+    color: gray; 
+    transition: 1s all;
+}
+.seccion{
+    background-color: white;  
+    border: 1px solid black; 
+    border-radius: 20px;
+    text-align: center;
+    margin: 20px 600px 20px 600px;
+}
+.seccion h1{
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+.seccion h3{
+    padding-bottom: 20px;
+}
+#carrito h4{
+    padding-bottom: 20px; 
+    padding-top: 20px;
+}
+#carrito p{
+    padding-bottom: 20px;
+}
+#carrito a{
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 5px;
+    background: red;
+    border: 2px solid;
+    border-color: red;
+    position: relative;
+}
+
+#carrito a:hover{
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgb(172, 49, 49);
+    transition: all 0.2s ease;
+}
+
+
+
+
+
+
+/* MENU DE NAVEGACION LATERAL */
+
+.sidenav {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: red; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+}
+
+.sidenav h2{
+    padding: 8px 8px 8px 32px;
+}
+
+/* Links para navegar en la barra lateral */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+/* Estilos para el boton que abre y cierra la bara lateral */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    overflow:hidden;
+    width:100%;
+}
+body {
+  overflow-x: hidden;
+}
+
+.topnav {
+    background-color: red;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+

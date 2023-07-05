@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Heladeras Whirlpool - BlackStore</title>
+</head>
+<body>
+
+<!-- BARRA DE NAVEGACION CON UNA BARRA LATERAL PARA DIRIGIRSE A LAS DISTINTAS SECCIONES DE LA PAGINA -->
+
+    <header class="indexGrid">
+        <div class="nombrePagina">
+            <a href="#" class="color-black"><p><b>Black</b>Store</p></a>
+        </div>
+
+        <div class="barraDeBusqueda">
+            <input type="text" id="inputBuscar" value="" placeholder="Buscar producto..." />
+        </div>
+
+        <div id="sideNavigation" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h2>Secciones</h2>
+            <a href="#">Lavarropas</a>
+            <a href="#">Cocinas</a>
+            <a href="#">Heladeras</a>
+            <a href="#">Freezers</a>
+            <a href="#">Anafes</a>
+            <a href="#">Lavavajillas</a>
+            <a href="#">Microondas</a>
+          </div>
+
+          <nav class="topnav">
+            <a href="#" onclick="openNav()">
+              <svg width="30" height="30" id="icoOpen">
+                  <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+                  <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+                  <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+              </svg>
+            </a>
+          </nav>
+          
+          <div id="main">
+          
+          </div>
+
+    </header>
+
+
+    <section>
+        <div id="productos">
+            <!-- Aca van a ir los productos que tengamos en la base de datos -->
+        </div>
+        <div class="seccion">
+        <h1>Carrito (<span id="cantidadProductos">0</span>)</h1>
+        <div id="carrito">
+            <!-- Aca vamos a cargar los productos que esten en el carrito -->
+        </div>
+        <h3>Total: $<span id="totalCarrito">0</span></h3>
+        </div>
+    </section>
+  
+    <footer class="footerGrid">
+        <div class="nombreDePagina">
+            <p><b>Black</b>Store</p>
+        </div>
+
+        <div class="redes-sociales">
+            <h4>Redes Sociales</h4>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Whatsapp</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/estilos.js"></script>
+</body>
+</html>
