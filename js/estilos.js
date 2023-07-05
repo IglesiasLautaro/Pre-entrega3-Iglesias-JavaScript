@@ -137,7 +137,7 @@ function cargarProductos(){
     for (const producto of productos){
         productosDataBase.innerHTML += `
         <div class="producto">
-        <img src="../img/${producto.imagen}" width="150px">
+        <img src="img/${producto.imagen}" width="150px">
         <h4>${producto.nombre}</h4>
         <p>$ ${producto.precio}</p>
         <p><a href="#" class="btnAgregar" data-id="${producto.id}">Agregar al carrito</a></p>
