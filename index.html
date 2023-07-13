@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Nunito:ital,wght@1,200&family=Titillium+Web:wght@200&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <title>Heladeras Whirlpool - BlackStore</title>
 </head>
@@ -12,31 +15,31 @@
 
     <header class="indexGrid">
         <div class="nombrePagina">
-            <a href="#" class="color-black"><p><b>Black</b>Store</p></a>
+            <a href="#" class="color-white"><p><b>W</b>S</p></a>
         </div>
 
         <div class="barraDeBusqueda">
-            <input type="text" id="inputBuscar" value="" placeholder="Buscar producto..." />
+            <form id="formBuscar">
+                <input type="text" id="inputBuscar" value="" placeholder="Buscar producto..."/>
+            </form>
         </div>
 
         <div id="sideNavigation" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <h2>Secciones</h2>
-            <a href="#">Lavarropas</a>
-            <a href="#">Cocinas</a>
-            <a href="#">Heladeras</a>
-            <a href="#">Freezers</a>
-            <a href="#">Anafes</a>
-            <a href="#">Lavavajillas</a>
-            <a href="#">Microondas</a>
+            <div class="seccion">
+                <h1>Carrito (<span id="cantidadProductos">0</span>)</h1>
+                <div id="carrito">
+                    <!-- Aca vamos a cargar los productos que esten en el carrito -->
+                </div>
+                <h3>Total: $<span id="totalCarrito">0</span></h3>
+                <a href="#" class="btnComprar">Comprar</a>
+                </div>
           </div>
 
           <nav class="topnav">
-            <a href="#" onclick="openNav()">.
+            <a href="#" onclick="openNav()">
               <svg width="30" height="30" id="icoOpen">
-                  <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
-                  <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
-                  <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+                <i class="fa-solid fa-bars"></i>
               </svg>
             </a>
           </nav>
@@ -47,37 +50,40 @@
 
     </header>
 
+    <main>
+        <img src="img/imagen-principal.jpg" alt="">
+    </main>
 
     <section>
+    <h3>Store</h3>
         <div id="productos">
             <!-- Aca van a ir los productos que tengamos en la base de datos -->
         </div>
-        <div class="seccion">
-        <h1>Carrito (<span id="cantidadProductos">0</span>)</h1>
-        <div id="carrito">
-            <!-- Aca vamos a cargar los productos que esten en el carrito -->
-        </div>
-        <h3>Total: $<span id="totalCarrito">0</span></h3>
-        </div>
+        
     </section>
   
     <footer class="footerGrid">
         <div class="nombreDePagina">
-            <p><b>Black</b>Store</p>
+            <p><b>Whirlpool</b>Store</p>
         </div>
 
         <div class="redes-sociales">
             <h4>Redes Sociales</h4>
-            <ul>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Whatsapp</a></li>
-                <li><a href="#">Twitter</a></li>
-            </ul>
+            
+            <i class="fa-brands fa-instagram"></i><a href="#">Instagram</a>
+            <i class="fa-brands fa-facebook"></i><a href="#">Facebook</a>
+            <i class="fa-brands fa-whatsapp"></i><a href="#">Whatsapp</a>
+            <i class="fa-brands fa-twitter"></i><a href="#">Twitter</a>
+
+            <p>Copyright - Todos los derechos reservados © 2023</p>
+            
         </div>
 
-    </footer>
+       
 
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/cac65bdb8d.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/estilos.js"></script>
 </body>

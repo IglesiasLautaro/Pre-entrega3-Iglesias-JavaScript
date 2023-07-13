@@ -35,6 +35,10 @@ class DataBase{
     productoPorId(id){
         return this.productos.find((producto) => producto.id === id);
     }
+
+    productoPorNombre(palabra){
+        return this.productos.filter((producto) => producto.nombre.toLowerCase().includes(palabra));
+    }
 }
 
 
@@ -44,14 +48,21 @@ class DataBase{
 
 class Carrito{
     constructor(){
-    this.carrito = [];
+
+    const carritoStorage = JSON.parse(localStorage.getItem("carrito"));
+
+    this.carrito = carritoStorage || [];
     this.total = 0;
     this.totalProductos = 0;
+
+    this.listar();
+
     }
 
     estaEnCarrito({ id }){
         return this.carrito.find((producto) => producto.id === id);
     }
+
     agregarProductoCarrito(producto){
         let productoEnCarrito = this.estaEnCarrito(producto);
         if(productoEnCarrito){
@@ -60,7 +71,9 @@ class Carrito{
         } else {
             // Agregar al carrito
             this.carrito.push({...producto, cantidad: 1});
+            localStorage.setItem("carrito", JSON.stringify(this.carrito));
         }
+        localStorage.setItem("carrito", JSON.stringify(this.carrito));
         this.listar();
     }
 
@@ -73,9 +86,15 @@ class Carrito{
             this.carrito.splice(indice, 1);
         }
 
+        localStorage.setItem("carrito", JSON.stringify(this.carrito));
         this.listar();
     }
 
+    vaciar(){
+        this.carrito = [];
+        localStorage.removeItem("carrito");
+        this.listar();
+    }
     listar(){
         this.total = 0;
         this.totalProductos = 0;
@@ -86,7 +105,6 @@ class Carrito{
             <h4>${producto.nombre}</h4>
             <p>$ ${producto.precio}</p>
             <a href="#" data-id="${producto.id}" class="btnQuitar">Quitar del carrito</a><br><br>
-            --------------------------------------------------
             </div>
             `
             this.total += (producto.precio * producto.cantidad);
@@ -126,13 +144,17 @@ const productosDataBase =  document.querySelector("#productos");
 const productosCarrito = document.querySelector("#carrito");
 const spanCantidadProductos = document.querySelector("#cantidadProductos");
 const spanTotalCarrito = document.querySelector("#totalCarrito");
+const formBuscar = document.querySelector("#formBuscar");
+const inputBuscar = document.querySelector("#inputBuscar");
+const botonCarrito = document.querySelector("#section h1")
+const botonComprar = document.querySelector(".btnComprar")
 
 // Llamamos a la funcion cargarProductos
-cargarProductos();
+cargarProductos(db.traerProductos());
 
 // Registros de nuestra base de datos en el HTML
-function cargarProductos(){
-    const productos = db.traerProductos();
+function cargarProductos(productos){
+    // const productos = db.traerProductos();
     productosDataBase.innerHTML = "";
     for (const producto of productos){
         productosDataBase.innerHTML += `
@@ -144,19 +166,47 @@ function cargarProductos(){
         </div>
         `;
     }
+    // Botones de agregar al carrito
+    const botonesAgregar = document.querySelectorAll(".btnAgregar");
+    for (const boton of botonesAgregar){
+        boton.addEventListener("click", (event) => {
+            event.preventDefault();
+            const id = Number(boton.dataset.id);
+            const producto = db.productoPorId(id);
+            carrito.agregarProductoCarrito(producto);
+        });
+    }
 }
 
-// Botones de agregar al carrito
-const botonesAgregar = document.querySelectorAll(".btnAgregar");
-for (const boton of botonesAgregar){
-    boton.addEventListener("click", (event) => {
-        event.preventDefault();
-        const id = Number(boton.dataset.id);
-        const producto = db.productoPorId(id);
-        carrito.agregarProductoCarrito(producto);
-    })
-}
 
+
+// Evento buscador
+formBuscar.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const palabra = inputBuscar.value;
+    cargarProductos(db.productoPorNombre(palabra.toLowerCase()));
+});
+
+inputBuscar.addEventListener("keyup", (event) => {
+    event.preventDefault();
+    const palabra = inputBuscar.value;
+    cargarProductos(db.productoPorNombre(palabra.toLowerCase()));
+
+    const productos = db.productoPorNombre(palabra.toLowerCase());
+
+    cargarProductos(productos);
+});
+
+botonComprar.addEventListener("click", () => {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Su compra ha sido realizada con exito!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      carrito.vaciar();
+})
 
 
 
