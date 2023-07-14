@@ -30,10 +30,6 @@ li{
 
 /* Grillas para ordenar los elementos de mi HTML */
 
-header{
-    position: fixed;
-    width: 100%;
-}
 .indexGrid{
     display: grid;
     grid-template-areas: 
@@ -456,5 +452,26 @@ body {
     color: white;
 }
 
+#categorias{
+display: flex;
+justify-content: left;
+margin-left: 30px;
+}
 
+#categorias li{
+    margin: 10px;
+}
+
+#categorias a{
+    color: white;
+    background-color: #1d1d1f;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+#categorias a:hover{
+    color: black;
+    background-color: red;
+    transition: 1s;
+}
 

@@ -1,34 +1,19 @@
-// Objetivos de la tercer pre-entrega:
-// -Usar DOM
-// -Usar Storage
-// -Usar eventos
+// Objetivos proyecto final:
+// - Categorias (filtrado)
+// - Usar asincronia (fetch)
+// - Opcion 1: Cargar un archivo .json local con NUESTROS productos
+// - Opcion 2: Usar un API como la de Mercado Libre
 
 class DataBase{
     constructor(){
-        this.productos = [],
-        this.agregarProductos("Heladera Bottom Mount Inox Whirlpool 588 Lts - WRE85AK", 966000, "Refrigeracion", 1, "heladera1.webp");
-        this.agregarProductos("Heladera Bottom Mount Inox Whirlpool Blanca 588 Lts - WRE85AK", 900000, "Refrigeracion", 2, "heladera2.webp");
-        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter 500 Lts", 812000, "Refrigeracion", 3, "heladera3.webp");
-        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter de 462 Lts", 778000, "Refrigeracion", 4, "heladera4.webp");
-        this.agregarProductos("Heladera Whirlpool French Door Bottom Mount 554 Lts", 1107299, "Refrigeracion", 5, "heladera5.webp");
-        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter 443 Lts", 826599, "Refrigeracion", 6, "heladera6.webp");
-        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter de 462 Lts WRM56D2", 736699, "Refrigeracion", 7, "heladera7.webp");
-        this.agregarProductos("Heladera Whirlpool No Frost Xpert Inverter 443 Lts WRE57D2", 785199, "Refrigeracion", 8, "heladera8.webp");
-        this.agregarProductos("Heladera Whirlpool No Frost Complete 573 Lts WRE80D2", "Sin stock", "Refrigeracion", 9, "heladera9.webp");
-        this.agregarProductos("Heladera Whirlpool No Frost 573 Lts WRE80K2", "Sin stock", "Refrigeracion", 10, "heladera10.png");
-        this.agregarProductos("Heladera Whirlpool No Frost 374 Lts Blanca WRM44HB", "Sin stock", "Refrigeracion", 11, "heladera11.webp");
-        this.agregarProductos("Heladera Whirlpool No frost French Door 541Lts WRO80K2", "Sin stock", "Refrigeracion", 12, "heladera12.webp");
-       
-       
+        this.productos = [];
     }
 
-    // METODO PARA AGREGAR REGISTROS A NUESTRA BASE DE DATOS
-    agregarProductos(nombre, precio, categoria, id, imagen){
-        const producto = new Producto(nombre, precio, categoria, id, imagen);
-        this.productos.push(producto);
-    }
+
     // METODO PARA PEDIR LA LISTA DE PRODUCTOS 
-    traerProductos(){
+    async traerProductos(){
+        const response = await fetch("json/productos.json");
+        this.productos = await response.json();
         return this.productos;
     }
 
@@ -39,12 +24,10 @@ class DataBase{
     productoPorNombre(palabra){
         return this.productos.filter((producto) => producto.nombre.toLowerCase().includes(palabra));
     }
+    registroPorCategoria(categoria){
+        return this.productos.filter((producto) => producto.categoria == categoria);
+    }
 }
-
-
-
-
-
 
 class Carrito{
     constructor(){
@@ -124,8 +107,6 @@ class Carrito{
     }
 }
 
-
-
 // CLASE MOLDE PARA LOS PRODUCTOS
 class Producto{
     constructor(nombre, precio, categoria, id, imagen = false, ){
@@ -148,9 +129,21 @@ const formBuscar = document.querySelector("#formBuscar");
 const inputBuscar = document.querySelector("#inputBuscar");
 const botonCarrito = document.querySelector("#section h1")
 const botonComprar = document.querySelector(".btnComprar")
+const botonesCategorias = document.querySelectorAll(".btnCategoria");
+
+botonesCategorias.forEach((boton) => {
+    boton.addEventListener("click", (event) => {
+        event.preventDefault();
+        const productoPorCategoria = db.registroPorCategoria(boton.innerText);
+        cargarProductos(productoPorCategoria);
+    })
+})
+
+
 
 // Llamamos a la funcion cargarProductos
-cargarProductos(db.traerProductos());
+db.traerProductos().then((productos) => cargarProductos(productos));
+
 
 // Registros de nuestra base de datos en el HTML
 function cargarProductos(productos){
@@ -166,6 +159,7 @@ function cargarProductos(productos){
         </div>
         `;
     }
+
     // Botones de agregar al carrito
     const botonesAgregar = document.querySelectorAll(".btnAgregar");
     for (const boton of botonesAgregar){

@@ -1,0 +1,234 @@
+[
+    {
+        "id":1,
+        "nombre": "Heladera Bottom Mount Inox Whirlpool 588 Lts - WRE85AK",
+        "precio": 966000,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera1.webp"
+    },
+    {
+        "id":2,
+        "nombre": "Heladera Bottom Mount Inox Whirlpool Blanca 588 Lts - WRE85AK",
+        "precio": 900000,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera2.webp"
+    },
+    {
+        "id":3,
+        "nombre": "Heladera Whirlpool No Frost Xpert Inverter 500 Lts",
+        "precio": 812000,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera3.webp"
+    },
+    {
+        "id":4,
+        "nombre": "Heladera Whirlpool No Frost Xpert Inverter de 462 Lts",
+        "precio": 778000,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera4.webp"
+    },
+    {
+        "id":5,
+        "nombre": "Heladera Whirlpool French Door Bottom Mount 554 Lts",
+        "precio": 1107299,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera5.webp"
+    },
+    {
+        "id":6,
+        "nombre": "Heladera Whirlpool No Frost Xpert Inverter 443 Lts",
+        "precio": 826599,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera6.webp"
+    },
+    {
+        "id":7,
+        "nombre": "Heladera Whirlpool No Frost Xpert Inverter de 462 Lts WRM56D2",
+        "precio": 736699,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera7.webp"
+    },
+    {
+        "id":8,
+        "nombre": "Heladera Whirlpool No Frost Xpert Inverter 443 Lts WRE57D2",
+        "precio": 785199,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera8.webp"
+    },
+    {
+        "id":9,
+        "nombre": "Heladera Whirlpool No Frost Complete 573 Lts WRE80D2",
+        "precio": 803200,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera9.webp"
+    },
+    {
+        "id":10,
+        "nombre": "Heladera Whirlpool No Frost 573 Lts WRE80K2",
+        "precio": 920500,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera10.webp"
+    },
+    {
+        "id":11,
+        "nombre": "Heladera Whirlpool No Frost 374 Lts Blanca WRM44HB",
+        "precio": 960230,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera11.webp"
+    },
+    {
+        "id":12,
+        "nombre": "Heladera Whirlpool No frost French Door 541Lts WRO80K2",
+        "precio": 900000,
+        "categoria": "Refrigeracion",
+        "imagen": "heladera12.webp"
+    },
+    {
+        "id":13,
+        "nombre": "Lavarropas Whirlpool Carga Superior 11KG Gris Oscuro WW11BT",
+        "precio": 300799,
+        "categoria": "Lavado",
+        "imagen": "lavarropas1.webp"
+    },
+    {
+        "id":14,
+        "nombre": "Lavarropas Whirlpool Carga Superior 6 KG 1200 RPM WCS60ZB",
+        "precio": 301699,
+        "categoria": "Lavado",
+        "imagen": "lavarropas2.webp"
+    },
+    {
+        "id":15,
+        "nombre": "Lavarropas Whirlpool Carga Superior 11 KG Blanco WW11BL",
+        "precio": 278399,
+        "categoria": "Lavado",
+        "imagen": "lavarropas3.webp"
+    },
+    {
+        "id":16,
+        "nombre": "Lavarropas Whirlpool Carga Superior 7,5 KG 750 RPM Blanco WWH07ABK",
+        "precio": 274299,
+        "categoria": "Lavado",
+        "imagen": "lavarropas4.webp"
+    },
+    {
+        "id":17,
+        "nombre": "Lavarropas Whirlpool Xpert Dual Wash 10 KG WWH10AT",
+        "precio": 335599,
+        "categoria": "Lavado",
+        "imagen": "lavarropas5.png"
+    },
+    {
+        "id":18,
+        "nombre": "Lavarropas Whirlpool 9kg - 1400rpm Blanco Inverter WNQ90AB",
+        "precio": 369999,
+        "categoria": "Lavado",
+        "imagen": "lavarropas6.webp"
+    },
+    {
+        "id":19,
+        "nombre": "Lavarropas Whirlpool 7kg - 1200rpm Blanco Inverter WNQ70AB",
+        "precio": 346700,
+        "categoria": "Lavado",
+        "imagen": "lavarropas7.png"
+    },
+    {
+        "id":20,
+        "nombre": "Lavarropas Whirlpool 8kg - 1200rpm Blanco Inverter WNQ80AB",
+        "precio": 301789,
+        "categoria": "Lavado",
+        "imagen": "lavarropas8.png"
+    },
+    {
+        "id":21,
+        "nombre": "Lavarropas Whirlpool Carga Frontal 6 KG 800 RPM WNQ06AB",
+        "precio": 289436,
+        "categoria": "Lavado",
+        "imagen": "lavarropas9.webp"
+    },
+    {
+        "id":22,
+        "nombre": "Lavarropas Whirlpool Carga Frontal Xpert Inverter 9 KG 1200 RPM WLF91AB",
+        "precio": 320980,
+        "categoria": "Lavado",
+        "imagen": "lavarropas10.webp"
+    },
+    {
+        "id":23,
+        "nombre": "Lavarropas Whirlpool Carga Frontal Xpert Inverter 7,5 KG 1000 RPM WLF75AB",
+        "precio": 315670,
+        "categoria": "Lavado",
+        "imagen": "lavarropas11.webp"
+    },
+    {
+        "id":24,
+        "nombre": "Lavarropas Whirlpool Carga Frontal 7 KG 1000 RPM WNQ07AB",
+        "precio": 300925,
+        "categoria": "Lavado",
+        "imagen": "lavarropas12.webp"
+    },
+    {
+        "id":25,
+        "nombre": "Cocina Whirlpool Multigas 56 CM Blanca WFB57DW",
+        "precio": 226399,
+        "categoria": "Cocina",
+        "imagen": "cocina1.webp"
+    },
+    {
+        "id":26,
+        "nombre": "Cocina Whirlpool Multigas 56 CM Inox WFX57DI",
+        "precio": 262999,
+        "categoria": "Cocina",
+        "imagen": "cocina2.webp"
+    },
+    {
+        "id":27,
+        "nombre": "Cocina Whirlpool Multigas 56 CM Inox WFX57DW",
+        "precio": 245899,
+        "categoria": "Cocina",
+        "imagen": "cocina3.webp"
+    },
+    {
+        "id":28,
+        "nombre": "Cocina Whirlpool Multigas 56 CM Blanca WFB57DI",
+        "precio": 299999,
+        "categoria": "Cocina",
+        "imagen": "cocina4.webp"
+    },
+    {
+        "id":29,
+        "nombre": "Cocina Whirlpool Multigas 60 CM WF160XB",
+        "precio": 310200,
+        "categoria": "Cocina",
+        "imagen": "cocina5.webp"
+    },
+    {
+        "id":30,
+        "nombre": "Cocina Whirlpool Multigas 60 cm Inox WF560XT",
+        "precio": 345000,
+        "categoria": "Cocina",
+        "imagen": "cocina6.webp"
+    },
+    {
+        "id":31,
+        "nombre": "Cocina Whirlpool Multigas 76 CM Inox WF976XC",
+        "precio": 286000,
+        "categoria": "Cocina",
+        "imagen": "cocina7.webp"
+    },
+    {
+        "id":32,
+        "nombre": "Cocina Whirlpool Multigas 60 CM Inox WF360XG",
+        "precio": 315000,
+        "categoria": "Cocina",
+        "imagen": "cocina8.webp"
+    },
+    {
+        "id":33,
+        "nombre": "Cocina Whirlpool Multigas 76 cm Inox WF876XG",
+        "precio": 203000,
+        "categoria": "Cocina",
+        "imagen": "cocina9.webp"
+    }
+]
+
