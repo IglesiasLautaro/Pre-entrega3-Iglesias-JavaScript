@@ -1,8 +1,4 @@
-// Objetivos proyecto final:
-// - Categorias (filtrado)
-// - Usar asincronia (fetch)
-// - Opcion 1: Cargar un archivo .json local con NUESTROS productos
-// - Opcion 2: Usar un API como la de Mercado Libre
+
 
 class DataBase{
     constructor(){
